@@ -1,0 +1,58 @@
+<div>
+    <form>
+        <div>
+            <p-card>
+                <p-panel header="User Management" [toggleable]="false">
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+                            <h5 class="first">Search For User</h5>
+                            <input type="text" pInputText placeholder="Enter Name (or) Email" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+                            <h5 class="first">Role</h5>
+                            <p-dropdown [options]="roleValues" placeholder="Select a Role" optionLabel="label"
+                                [showClear]="true"></p-dropdown>
+                        </div>
+                        <div class="p-col-12 p-md-6 p-sm-12 p-lg-2 p-xl-2">
+                            <h5></h5>
+                            <button pButton pRipple type="button" icon="pi pi-search" label="Search" class="p-mr-2 p-mb-2"></button>
+                        </div>
+                        <div class="p-col-12 p-md-6 p-sm-12 p-lg-2 p-xl-2">
+                            <h5></h5>
+                            <button pButton pRipple type="button" routerLink='/root/addUser' label="Add" icon="pi pi-plus" class="p-mr-2 p-mb-2"></button>
+                        </div>
+                    </div>
+                    <br>
+                    <div>
+                        <p-table [columns]="cols" [value]="values" styleClass="p-datatable-gridlines p-datatable-responsive-demo">
+                            <ng-template pTemplate="header" let-columns>
+                                <tr>
+                                    <th *ngFor="let col of columns">
+                                        {{col.header}}
+                                    </th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                                <tr>
+                                    <td *ngFor="let col of columns">
+                                        <span class="p-column-title">{{col.header}}</span>
+                                        {{rowData[col.field]}}
+                                        <div *ngIf="col.header === 'Actions'">
+                                            <button pButton icon="pi pi-pencil" type="button" pTooltip="Edit" tooltipPosition="top"
+                                                routerLink="/root/editUser" class="ui-button-warning" >
+                                            </button>&nbsp;
+                                            <button pButton icon="pi pi-trash" type="button" pTooltip="Delete" tooltipPosition="top"
+                                                class="ui-button-danger" >
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+
+                </p-panel>
+            </p-card>
+        </div>
+    </form>
+</div>

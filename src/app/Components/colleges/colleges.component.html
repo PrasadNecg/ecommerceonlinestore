@@ -1,0 +1,163 @@
+<div>
+    <form [formGroup]="collegeForm">
+        <div>
+            <!-- <p-card> -->
+                <p-panel header="Colleges" [toggleable]="false">
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3">
+                            <h5 class="first">College Name</h5>
+                            <input type="text" pInputText placeholder="Enter College Name" formControlName="Colname" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3">
+                            <h5 class="first">Country</h5>
+                            <p-dropdown [options]="countryValues" placeholder="Select a Country" optionLabel="label"
+                            formControlName="country"  [showClear]="true"></p-dropdown>
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3">
+                            <h5 class="first">State</h5>
+                            <p-dropdown [options]="stateValues" placeholder="Select a State" optionLabel="label"
+                            formControlName="state"  [showClear]="true"></p-dropdown>
+                        </div>
+                    <!-- </div>
+                    <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-8  p-xl-10"></div> -->
+                        <div class="p-col-12 p-md-6 p-sm-12 p-lg-2 p-xl-1">
+                            <h5></h5>
+                            <button pButton pRipple type="button" icon="pi pi-undo" label="Reset" class="reset"></button>
+                        </div>
+                        <div class="p-col-12 p-md-6 p-sm-12 p-lg-2 p-xl-1">
+                            <h5></h5>
+                            <button pButton pRipple type="button" icon="pi pi-search" label="Search" class="search"></button>
+                        </div>
+                    </div>
+                </p-panel>
+                    <p-card>
+                    <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-6 p-sm-12 p-lg-4">
+                        <h5 class="rec">No.Of Records :</h5>
+                    </div>
+                    <div class="p-col-12 p-md-6 p-sm-12 p-lg-6"></div>
+                        <div class="p-col-12 p-md-6 p-sm-12 p-lg-2 p-xl-1">
+                            <h5></h5>
+                            <button pButton pRipple type="button" routerLink='/root/addColleges' label="Add" icon="pi pi-plus" class="add"></button>
+                        </div>
+                    </div>
+                    <!-- <br> -->
+                    <div>
+                        <p-table [columns]="cols" [value]="values" styleClass="p-datatable-gridlines p-datatable-responsive-demo">
+                            <ng-template pTemplate="header" let-columns>
+                                <tr>
+                                    <th *ngFor="let col of columns">
+                                        {{col.header}}
+                                    </th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                                <tr>
+                                    <td *ngFor="let col of columns">
+                                        <!-- <span class="p-column-title">{{col.header}}</span> -->
+                                        {{rowData[col.field]}}
+                                        <div *ngIf="col.header === 'Actions'">
+                                            <button pButton icon="pi pi-pencil" type="button" pTooltip="Edit" tooltipPosition="top"
+                                            routerLink='/root/addColleges' class="ui-button-warning" >
+                                            </button>&nbsp;
+                                           <p-button (click)="confirm2()" pTooltip="Delete" tooltipPosition="top" icon="pi pi-trash" ></p-button>&nbsp;
+                                            <!-- <button pButton icon="pi pi-trash" type="button" pTooltip="Delete" tooltipPosition="top"
+                                                class="ui-button-danger" >
+                                            </button>&nbsp; -->
+                                            <button pButton icon="pi pi-reply" type="button" pTooltip="Enroll" tooltipPosition="top"
+                                            (click)="enroll()" >
+                                        </button>&nbsp;
+                                        <button pButton icon="pi pi-list" type="button" pTooltip="Enroll List" tooltipPosition="top"
+                                       (click)="gotoEnrollList()" class="ui-button-danger" >
+                                    </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </p-card>
+               
+            <!-- </p-card> -->
+        </div>
+    </form>
+</div>
+<p-confirmDialog [style]="{width: '30vw'}" [baseZIndex]="10000"></p-confirmDialog>
+<p-dialog header="Enroll" [(visible)]="enrollDialog" [style]="{width: '50vw'}">
+    <!-- <ng-template pTemplate="header"></ng-template> -->
+    
+    <form [formGroup]="enrollForm">
+    <div class="p-grid p-fluid">
+        <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+            <h5 class="first">Student Name</h5>
+            <input type="text" pInputText placeholder="Enter Student Name" formControlName="Sname" />
+        </div>
+        <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+            <h5 class="first">Department</h5>
+            <p-dropdown [options]="deptValues" placeholder="Select a Department" optionLabel="label"
+            formControlName="dept"  [showClear]="true"></p-dropdown>
+        </div>
+        <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+            <h5 class="first">Contact No.</h5>
+            <input type="text" pInputText placeholder="Enter Contact No" formControlName="contactNo" />
+        </div>
+        <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+            <h5 class="first">Primary Address</h5>
+            <p-card>        
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                        <h5 class="first">Address </h5>
+                        <input type="text" pInputText placeholder="Enter Address Line 1" />
+                    </div>
+
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                        <h5 class="first">Country</h5>
+                        <p-dropdown [options]="deptValues" placeholder="Select Country" optionLabel="label"
+                        formControlName="dept"  [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                        <h5 class="first">State</h5>
+                        <p-dropdown [options]="deptValues" placeholder="Select State" optionLabel="label"
+                        formControlName="dept"  [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                        <h5 class="first">Zip</h5>
+                        <input type="text" pInputText placeholder="Enter zip"  />
+                    </div>
+                </div>
+            </p-card>
+        </div>
+        <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+            <h5 class="first">Secondary Address</h5>
+            <p-card>      
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                        <h5 class="first">Address</h5>
+                        <input type="text" pInputText placeholder="Enter Address Line 1" />
+                    </div>
+
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                        <h5 class="first">Country</h5>
+                        <p-dropdown [options]="deptValues" placeholder="Select Country" optionLabel="label"
+                        formControlName="dept"  [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                        <h5 class="first">State</h5>
+                        <p-dropdown [options]="deptValues" placeholder="Select State" optionLabel="label"
+                        formControlName="dept"  [showClear]="true"></p-dropdown>
+                    </div>
+                    <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                        <h5 class="first">Zip</h5>
+                        <input type="text" pInputText placeholder="Enter zip"  />
+                    </div>
+                </div>
+                </p-card>
+        </div>
+        </div>
+    </form>
+    <p-footer>
+        <button pButton type="button" label="Save" icon="pi pi-check" ></button>
+        <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="CancelEnroll()" ></button>
+    </p-footer>
+</p-dialog>

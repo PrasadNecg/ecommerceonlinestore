@@ -1,0 +1,177 @@
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/prismjs/themes/prism-coy.css";
+@import "../node_modules/@fullcalendar/core/main.min.css";
+@import "../node_modules/@fullcalendar/daygrid/main.min.css";
+@import "../node_modules/@fullcalendar/timegrid/main.min.css";
+@import "assets/demo/flags/flags.css";
+
+/* You can add global styles to this file, and also import other style files */
+
+#gridHeader {
+    background-color: #00bcd4;
+    color: #fff;
+}
+
+#cssdiv {
+    background-color: #00bcd4;
+    padding: 10px;
+    // font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;
+    // font-size: 15px;
+    color: white;
+    // font-weight: bold;
+}
+
+.colorBlue {
+    color: #00bcd4 !important;
+}
+
+#validError {
+    .ui-dropdown label.ui-dropdown {
+        border: 1px solid red !important;
+    }
+}
+#cssh4 {
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+.dialogBox .ui-dialog {
+    // top: 100px !important;
+    padding: 0px;
+}
+.validationtest {
+    color: red;
+}
+
+.spinnerDisable {
+    p-spinner .ui-spinner .ui-spinner-button {
+        display: none;
+    }
+}
+
+.pb15 {
+    padding-bottom: 15px;
+}
+
+.timeSheetConfirm .ui-dialog {
+    top: 100px !important;
+    padding: 0px;
+}
+
+.modalCalenderStyle .ui-dialog .ui-dialog-content {
+    display: inline-table;
+}
+
+#modalCalender {
+    p-calendar .ui-calendar .ui-datepicker {
+        top: 30px !important;
+    }
+}
+
+#timeSheetTable table thead tr th {
+    padding: 0.5em 0 0.5em 0 !important;
+}
+
+#reviewHoursId {
+    .borderColorRedDropdown .ui-dropdown {
+        border: 1px solid red;
+    }
+}
+
+#autoCompleteId {
+    p-autocomplete .ui-autocomplete {
+        .ui-inputtext {
+            background-color: transparent;
+        }
+    }
+}
+
+#autoCompleteReviewId {
+    .borderColorRedDropdown .ui-autocomplete {
+        border: 1px solid red;
+    }
+}
+
+#autoCompleteTechReviewId,
+#autoCompleteReviewId,
+#autoCompleteId {
+    p-autocomplete .ui-autocomplete {
+        .ui-inputtext {
+            border: none;
+            width: calc(100% - 0.143em);
+        }
+        .ui-button {
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            cursor: text;
+            background-color: transparent;
+            border: none;
+        }
+
+        .ui-button:enabled:focus {
+            outline: none !important;
+        }
+    }
+}
+
+#interviewDate {
+    p-calendar .ui-calendar .ui-datepicker .ui-timepicker {
+        display: none;
+    }
+}
+
+.invalidMandatory {
+    p-dropdown.ng-invalid.ng-touched .ui-dropdown {
+        border: 1px solid red !important;
+    }
+    p-calendar.ng-invalid.ng-touched .ui-calendar {
+        border: 1px solid red;
+    }
+    p-multiSelect.ng-invalid.ng-touched .ui-multiselect {
+        border: 1px solid red !important;
+    }
+    p-inputMask.ng-invalid.ng-touched .ui-inputtext {
+        border: 1px solid red;
+    }
+    p-checkbox.ng-invalid.ng-touched .ui-checkbox {
+        border: 1px solid red;
+    }
+    p-autoComplete.ng-invalid.ng-touched
+        .ui-autocomplete
+        .ui-autocomplete-input {
+        border: 1px solid red;
+    }
+    //     .ui-inputgroup > {
+    //         div >  {
+
+    //         .ui-inputtext.ng-invalid.ng-touched {
+    //         border: 1px solid red !important;
+    //         }
+    //     }
+    // }
+}
+
+body .ui-datepicker .ui-monthpicker .ui-monthpicker-month.ui-state-active {
+    color: #000000;
+    background-color: #00bcd4;
+}
+// #calanderMandatory {
+
+// }
+h5.first {
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: #000000;
+}
+.p-datatable.p-datatable-gridlines .p-datatable-thead > tr > th {
+    border-width: 1px 1px 1px 1px;
+    background-color: #0d416b; //#00796b;
+    color: white;
+
+    padding: 10px;
+}
+:host ::ng-deep p-button:hover {
+    background-color: #2368a0;
+}

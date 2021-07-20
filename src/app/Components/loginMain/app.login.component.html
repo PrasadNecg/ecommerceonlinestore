@@ -1,0 +1,87 @@
+<p-toast styleClass="custom-toast"></p-toast>
+
+<div class="login-wrapper" style="background-color: blue;">
+    <!-- START Login Background Pic Wrapper-->
+    <div class="bg-pic">
+        <!-- START Background Pic-->
+        <div class="img-holder"
+            [ngStyle]="{'background':'url(assets/layout/images/pages/bg-login.jpg)','background-size':'cover'}"
+            style="opacity:0.85 !important;height: 100%;"></div>
+        <!-- START Background Caption-->
+        <div class="caption">
+            <!-- <h2 class="semi-bold text-white">Hubble - Your portal for Leaves, Timesheets and Payroll</h2> -->
+            <h2 class="desc">&nbsp;&nbsp;&nbsp;CRAM - Miracle's Portal for <br>&nbsp;&nbsp;&nbsp;College Recruitment Analysis & Management
+            </h2>
+            <p class="small">
+                &copy; {{year}} Miracle Software Systems, Inc.
+            </p>
+        </div>
+        <!-- END Background Caption-->
+    </div>
+    <!-- END Login Background Pic Wrapper-->
+    <!-- START Login Right Container-->
+    <div class="login-container bg-white">
+        <div class="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-50 sm-p-l-15 sm-p-r-15 sm-p-t-40">
+            <img src="assets/layout/images/miracle-logo.svg" alt="logo" width="200px" height="50" style="margin-left:30px !important;
+                margin-top: 25%;">
+
+            <p></p>
+            <!-- START Login Form -->
+            <form class="p-t-15 loginFormCss" role="form" [formGroup]="form">
+                <!-- START Form Control-->
+                <div pgFormGroupDefault class="form-group form-group-default" style="width: 345px;">
+                    <h5>Username</h5>
+                    <input class='userClass' type="email" autocomplete="on" formControlName="email" placeholder="Email ID" pInputText>
+                    <!-- <i class="pi pi-user"></i> -->
+                    <div>
+                        <span class="validationtest"
+                            *ngIf="form.controls.email.touched && form.controls.email.invalid && form.controls.email.errors.required">
+                            Please enter username
+                        </span>
+                    </div>
+                </div>
+                <!-- END Form Control-->
+                <!-- START Form Control-->
+                <div pgFormGroupDefault class="form-group form-group-default" style="width: 345px;">
+                    <h5>Password</h5>
+                    <input class = 'userClass' type="password" autocomplete="on" formControlName="password" placeholder="Password"
+                        pInputText [type]="hide ? 'password' : 'text'">
+                    <div>
+                        <span class="validationtest"
+                            *ngIf="form.controls.password.touched && form.controls.password.invalid && form.controls.password.errors.required">
+                            Please enter password
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="text-primary small1">Forgot Password
+                            <i class="fa fa-question"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- END Form Control -->
+                <button (click)="login()" pButton type="submit" label="Sign In" [disabled]="loading">
+                    <i class="pi pi-spin pi-spinner" style="font-size:16px" *ngIf="loading" ></i></button>
+
+                <style>
+                    .pgn-wrapper {
+                        top: 391px !important;
+                    }
+                </style>
+
+                <!-- <div *ngIf="showNotification" class="notificationClass"
+            style="text-align: left;position: absolute;bottom: 10px;right: 7px;width: 285px;z-index: 9999;">
+            <span class="m-0">{{notificationMessage}}</span><i class="fa fa-close" style="position: absolute;
+                        right: 15px;
+                        top: 13px;cursor:pointer" (click)="closeNotification()"></i>
+          </div> -->
+
+
+            </form>
+            <!--END Login Form-->
+        </div>
+    </div>
+    <!-- END Login Right Container-->
+</div>

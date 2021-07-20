@@ -1,0 +1,92 @@
+<p-panel header=" Add College" [toggleable]="false">
+    <form [formGroup]="addCollegeForm">
+        <div class="p-grid p-fluid">
+            <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+                <h5 class="first">College Name</h5>
+                <input type="text" pInputText placeholder="Enter College Name" formControlName="Colname" />
+            </div>
+            <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+                <h5 class="first">Department</h5>
+                <p-multiSelect [options]="deptValues" formControlName="dept" defaultLabel="Please Select Department"
+                    optionLabel="label"></p-multiSelect>
+            </div>
+            <div class="p-col-12 p-md-12 p-sm-12 p-lg-4">
+                <h5 class="first">Contact No.</h5>
+                <input type="text" pInputText placeholder="Enter Contact No" formControlName="ContactNo" />
+            </div>
+            <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                <h5 class="clg">College Address</h5>
+            </div>
+            <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                <!-- <p-card> -->
+                    <!-- <h5 >Primary Address</h5> -->
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                            <h5 class="first">Address Line 1</h5>
+                            <input type="text" pInputText placeholder="Enter Address Line 1"
+                                formControlName="Colname" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                            <h5 class="first">Address Line 2</h5>
+                            <input type="text" pInputText placeholder="Enter Address Line 1"
+                                formControlName="Colname" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3">
+                            <h5 class="first">Country</h5>
+                            <input type="text" pInputText placeholder="Enter country" formControlName="Colname" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3">
+                            <h5 class="first">State</h5>
+                            <input type="text" pInputText placeholder="Enter state" formControlName="Colname" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3">
+                            <h5 class="first">District</h5>
+                            <input type="text" pInputText placeholder="Enter country" formControlName="Colname" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3">
+                            <h5 class="first">Mandal</h5>
+                            <input type="text" pInputText placeholder="Enter state" formControlName="Colname" />
+                        </div>
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-3 ">
+                            <h5 class="first">Zip</h5>
+                            <input type="text" pInputText placeholder="Enter zip" formControlName="Colname" />
+                        </div>
+                    </div>
+                <!-- </p-card> -->
+            </div>
+               <!-- <div class="p-col-12 p-md-12 p-sm-12 p-lg-6">
+                <p-card >
+                    <h5 >Secondary Address</h5>
+                    <div class="p-grid p-fluid">
+                        <div class="p-col-12 p-md-12 p-sm-12 p-lg-12">
+                            <h5 class="first">Address Line 1</h5>
+                            <input type="text" pInputText placeholder="Enter Address Line 1"
+                                formControlName="Colname" />
+                        </div>
+
+                        <div class="p-col-6 p-md-6 p-sm-6 ">
+                            <h5 class="first">Country</h5>
+                            <input type="text" pInputText placeholder="Enter country" formControlName="Colname" />
+                        </div>
+                        <div class="p-col-6 p-md-6 p-sm-6 ">
+                            <h5 class="first">State</h5>
+                            <input type="text" pInputText placeholder="Enter state" formControlName="Colname" />
+                        </div>
+
+                        <div class="p-col-6 p-md-6 p-sm-12">
+                            <h5 class="first">Zip</h5>
+                            <input type="text" pInputText placeholder="Enter zip" formControlName="Colname" />
+                        </div>
+                    </div>
+                </p-card>
+               </div> -->
+        </div>
+    </form>
+    <div class="p-grid ">
+        <div class="p-col-9 p-md-9 p-sm-12 p-lg-9 "></div>
+        <div class="p-col-3 p-md-3 p-sm-12 p-lg-3 ">
+            <button pButton type="button" class="cancelbutton" icon="pi pi-check" label="Save" ></button>&nbsp;
+            <button pButton type="button" class="cancelbutton" icon="pi pi-times" label="Cancel" ></button>
+        </div>
+    </div>
+</p-panel>
